@@ -14,7 +14,7 @@ The machine **windows-target-1** has been internet-facing for several months, ma
 
 ### 🟡 Step 1: Confirming Internet-Facing Status
 
-To assess exposure, we checked whether `windows-target-1` had been internet-facing.
+To assess exposure, I checked whether `windows-target-1` had been internet-facing.
 
 ```kql
 DeviceInfo
@@ -33,7 +33,7 @@ An internet-facing machine increases the risk of external attacks, making it a l
 
 ### 🟠 Step 2: Identifying Failed Login Attempts
 
-To analyze authentication attempts, we filtered unsuccessful logins from external IPs.
+To analyze authentication attempts, I filtered unsuccessful logins from external IPs.
 
 ```kql
 DeviceLogonEvents
@@ -56,7 +56,7 @@ Repeated login failures from various IPs strongly indicate that attackers were a
 
 ### 🔴 Step 3: Confirming No Successful Logins from Suspicious IPs
 
-To ensure that none of the most active malicious IPs successfully logged in, we ran the following query:
+To ensure that none of the most active malicious IPs successfully logged in, I ran the following query:
 
 ```kql
 let RemoteIPsInQuestion = dynamic(["89.248.172.39","88.214.25.111", "45.141.84.154", "77.90.185.223", "194.0.234.31"]);
